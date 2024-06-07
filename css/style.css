@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 45%; 
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper img {
+    position: absolute;
+}
+
+.razor {
+    z-index: 1;
+    width: 140%;
+    animation: moveRazor 6s linear forwards 2s;
+}
+
+@keyframes moveRazor {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(2000px);
+    }
+}
+
+.StartingS, .StartingH, .StartingA {
+    animation: removeText1 0.1s linear forwards 3.4s;
+}
+
+.StartingV, .StartingE {
+    animation: removeText1 0.1s linear forwards 4.2s;
+}
+
+@keyframes removeText1 {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes removeText2 {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+#LetterV {
+    opacity: 0%;
+    animation: showText 1s ease-in forwards 8s;
+}
+
+.NewText {
+    opacity: 0%;
+    animation: showText 1s ease-in forwards 8s, shakeAnimation 0.5s ease-in-out infinite 9s;
+}
+
+
+@keyframes showText {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#LetterVuitklap {
+    transform-origin: bottom;
+    transform-box: fill-box;
+    opacity: 0%;
+    animation: unfold 1s ease forwards 9s, showText 1s ease forwards 8s;
+}
+
+@keyframes unfold {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+.LetterE {
+    opacity: 0%;
+	animation: beweegE 2s forwards infinite 10s, showText 1s ease-in forwards 8s;
+	transform-origin: center;
+}
+
+@keyframes beweegE{
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(2deg);
+	}
+    100% {
+        transform: rotate(0deg);;
+    }
+}
+
+#LetterH {
+    opacity: 0%;
+    animation: showText 1s ease-in forwards 8s;
+}
+
+@keyframes moveClippingMask {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(160px);
+    }
+  }
+  
+.cls-6 g {
+    animation: moveClippingMask 15s linear infinite 10s;
+  }
+  
+
+  @media (min-width: 1600px) {
+    .razor {
+        z-index: 1;
+        width: 140%;
+        animation: moveRazor 5s linear forwards 2s;
+}
+}
